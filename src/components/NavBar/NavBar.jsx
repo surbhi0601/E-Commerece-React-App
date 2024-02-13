@@ -1,26 +1,28 @@
 import React, { useState } from 'react'
 import Logo from '../assets/logo.png'
 import cart_icon from '../assets/cart_icon.png'
+import './NavBar.css'
+import { Link } from 'react-router-dom'
 function NavBar() {
-    const [menu,setMenu] = useState("shop")
+  const [menu, setMenu] = useState("shop")
   return (
     <div>
       <nav className='flex justify-around items-center py-5 shadow-lg'>
         <div className=" flex items-center">
-            <img src={Logo} alt="" />
-            <p className='text-4xl font-semibold'>SHOPPERS</p>
+          <img src={Logo} alt="" />
+          <p className='text-4xl font-semibold'>SHOPPERS</p>
         </div>
-        <div >
-            <a href="/" onClick={() => setMenu('shop')} className='mx-4'>Shop</a>
-            <a href="/" onClick={() => setMenu('mens')} className='mx-4'>Man</a>
-            <a href="/" onClick={() => setMenu('womens')} className='mx-4'>Women</a>
-            <a href="/" onClick={() => setMenu('kids')} className='mx-4'>Kids</a>
+        <div className='flex justify-center items-center' >
+          <a href="/" onClick={() =>  setMenu('shop') } className='mx-5 '><Link to='/'>Shop</Link> {menu === "shop" ? <hr /> : <></>}</a>
+          <a href="/" onClick={() => setMenu('mens') } className='mx-5 '><Link to='/mens'>Man</Link>{menu === "mens" ? <hr /> : <></>}</a>
+          <a href="/" onClick={() => setMenu('womens') } className='mx-5 '><Link to='/womens'>Women</Link>{menu === "womens" ? <hr /> : <></>}</a>
+          <a href="/" onClick={() =>  setMenu('kids') } className='mx-5 '><Link to='/kids'>Kids</Link>{menu === "kids" ? <hr /> : <></>}</a>
         </div>
         <div className='flex items-center relative'>
-            
-        <button className='py-2 px-8 rounded-full border-gray border-2'>Login</button>
-        <img src={cart_icon} alt="" className=' z-10'/>
-        <div className='bg-red-400 rounded-full absolute -top-1 -right-4 w-[24px] h-[24px] flex justify-center items-center font-bold  '>0</div>
+
+          <Link to='/login'><button className='py-2 px-8 rounded-full border-gray border-2 mx-2 hover:border-black'>Login</button></Link>
+          <Link to='/cart'><img src={cart_icon} alt=""  /></Link>
+          <div className='bg-red-600 rounded-full absolute -z-10 -top-1 -right-4 w-[24px] h-[24px] flex justify-center items-center font-bold  '>0</div>
         </div>
       </nav>
     </div>
