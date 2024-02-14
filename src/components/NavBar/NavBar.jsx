@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Logo from '../assets/logo.png'
 import cart_icon from '../assets/cart_icon.png'
-import './NavBar.css'
 import { Link } from 'react-router-dom'
 function NavBar() {
   const [menu, setMenu] = useState("shop")
@@ -13,10 +12,10 @@ function NavBar() {
           <p className='text-4xl font-semibold'>SHOPPERS</p>
         </div>
         <div className='flex justify-center items-center' >
-          <a href="/" onClick={() =>  setMenu('shop') } className='mx-5 '><Link to='/'>Shop</Link> {menu === "shop" ? <hr /> : <></>}</a>
-          <a href="/" onClick={() => setMenu('mens') } className='mx-5 '><Link to='/mens'>Man</Link>{menu === "mens" ? <hr /> : <></>}</a>
-          <a href="/" onClick={() => setMenu('womens') } className='mx-5 '><Link to='/womens'>Women</Link>{menu === "womens" ? <hr /> : <></>}</a>
-          <a href="/" onClick={() =>  setMenu('kids') } className='mx-5 '><Link to='/kids'>Kids</Link>{menu === "kids" ? <hr /> : <></>}</a>
+          <a href="/" onClick={() =>  setMenu('shop') } className='mx-5 '><Link to='/'>Shop</Link> {menu === "shop" ? <hr className='bg-red-500 h-[3px] border-none ' /> : <></>}</a>
+          <a href="/" onClick={() => setMenu('mens') } className='mx-5 '><Link to='/mens'>Man</Link>{menu === "mens" ? <hr className='bg-red-500 h-[3px] border-none ' /> : <></>}</a>
+          <a href="/" onClick={() => setMenu('womens') } className='mx-5 '><Link to='/womens'>Women</Link>{menu === "womens" ? <hr className='bg-red-500 h-[3px] border-none ' /> : <></>}</a>
+          <a href="/" onClick={() =>  setMenu('kids') } className='mx-5 '><Link to='/kids'>Kids</Link>{menu === "kids" ? <hr className='bg-red-500 h-[3px] border-none ' /> : <></>}</a>
         </div>
         <div className='flex items-center relative'>
 
