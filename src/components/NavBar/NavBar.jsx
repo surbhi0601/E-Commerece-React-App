@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 function NavBar() {
   const [menu, setMenu] = useState("shop")
   return (
-    <div>
-      <nav className='flex justify-around items-center py-5 shadow-lg'>
+    <div className='hidden lg:block'>
+      <nav className='flex justify-around items-center py-5 shadow-lg '>
         <div className=" flex items-center">
           <img src={Logo} alt="" />
           <p className='text-4xl font-semibold'>SHOPPERS</p>

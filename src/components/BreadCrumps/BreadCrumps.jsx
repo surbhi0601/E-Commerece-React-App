@@ -4,7 +4,7 @@ import breadcrupm_icon from '../assets/breadcrum_arrow.png'
 const BreadCrumps = (e) => {
     const {product} = e;
   return (
-    <div className='flex'>
+    <div className='flex my-11 mx-16'>
       HOME <img src={breadcrupm_icon} className='mx-1' /> SHOP <img src={breadcrupm_icon} className='mx-1' />{product.category} <img src={breadcrupm_icon} className='mx-1'  />{product.name}
     </div>
   )
